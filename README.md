@@ -2,7 +2,7 @@
 A boilerplate for making Electron applications, with preconfigured tools and utilities.
 
 It includes the following tools:
-- [electron-builder](https://github.com/electron-userland/electron-builder) for building the application
+- [electron-builder](https://github.com/electron-userland/electron-builder) for building and releasing the application
 - [webpack](https://webpack.js.org/) for transpiling, bundling and minifying the code before building
 - [react](https://reactjs.org/) for the renderer process
 - [babel](https://babeljs.io/) for transpiling the JSX syntax of react (integrated in webpack)

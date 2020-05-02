@@ -1,5 +1,6 @@
 {
   "name": "app-name-here",
+  "fullname": "App name here",
   "version": "1.0.0",
   "description": "App description here",
   "main": "main.js",

@@ -1,0 +1,29 @@
+environment:
+  GH_TOKEN:
+    secure: 8KYYD5z1Nx3aZowlM5HLE5yMwiv8m8tzJpHhsJ7NsIsXp+Z8J1dy5mhgIOkmVC+o
+  nodejs_version: "12"
+
+version: 1.0.{build}
+
+install:
+- ps: Install-Product node $env:nodejs_version
+- cmd: node --version
+- cmd: npm --version
+- cmd: npm install
+
+build_script:
+- cmd: npm run build
+
+test_script:
+- cmd: npm test
+
+artifacts:
+- path: 'dist/*.exe'
+
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: HgdtbjmzxMx6nvGah9A2HTFFpCDYcetTrQrkeWZ+bxF5ZwDtJ4rqTZua+SdpwMjb
+  artifact: '/*.exe'
+  draft: true
+  prerelease: true
