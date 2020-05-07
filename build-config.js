@@ -69,6 +69,11 @@ module.exports = {
 		uninstallerIcon: 'build/icons/icon.ico',
 		license: 'LICENSE'
 	},
+	mac: {
+		category: 'public.app-category.utilities',
+		target: 'default',
+		icon: 'build/icons/icon.png'
+	},
 	compression: 'normal',
 	extraResources: [],
 	extraFiles: [],
