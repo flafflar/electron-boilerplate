@@ -27,7 +27,7 @@
     "mocha": "^7.1.2",
     "spectron": "^10.0.1",
     "style-loader": "^1.2.1",
-    "webpack": "^4.44.1",
+    "webpack": "^5.12.2",
     "xvfb-maybe": "^0.2.1"
   },
   "dependencies": {
