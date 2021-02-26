@@ -38,3 +38,13 @@ for:
   test_script:
   - cmd: npm run build
   - cmd: npm test
+
+artifacts:
+  - path: dist/*.exe
+    name: Installer
+
+  - path: dist/*.exe.blockmap
+    name: Installer blockmap
+
+  - path: dist/latest.yml
+    name: Update file
