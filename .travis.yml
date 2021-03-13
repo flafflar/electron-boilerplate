@@ -2,10 +2,6 @@ language: node_js
 node_js:
 - node
 
-os:
-- osx
-- linux
-
 services:
 - xvfb
 
@@ -21,11 +17,21 @@ install:
 
 jobs:
   include:
-    - script:
+    - stage: test
+      os: linux
+      script: &test-script
       - npm run bundle:dev
       - npm test
+    - stage: test
+      os: osx
+      script: *test-script
     - stage: build
-      script: npm run build
+      os: linux
+      script: &build-script
+      - npm run build
+    - stage: build
+      os: osx
+      script: *build-script
     - stage: deploy
       deploy:
         provider: releases
