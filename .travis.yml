@@ -11,6 +11,7 @@ cache:
   - $HOME/.npm
   - $HOME/.cache/electron
   - $HOME/Library/Caches/electron
+  - dist
 
 install:
 - npm ci
@@ -33,6 +34,7 @@ jobs:
       os: osx
       script: *build-script
     - stage: deploy
+      script: skip
       deploy:
         provider: releases
         api_key: $GH_TOKEN
