@@ -34,6 +34,7 @@ jobs:
       os: osx
       script: *build-script
     - stage: deploy
+      install: skip
       script: skip
       deploy:
         provider: releases
