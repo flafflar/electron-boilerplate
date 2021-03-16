@@ -45,6 +45,9 @@ jobs:
           - 'dist/*.dmg'
           - 'dist/*.dmg.blockmap'
           - 'dist/latest-mac.yml'
+          - 'dist/*.snap'
+          - 'dist/*.AppImage'
+          - 'dist/latest-linux.yml'
         overwrite: true
         draft: true
         on:
