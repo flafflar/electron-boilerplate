@@ -48,3 +48,11 @@ artifacts:
 
   - path: dist/latest.yml
     name: Update file
+
+deploy:
+  release: Draft
+  provider: GitHub
+  auth_token: $(GH_TOKEN)
+  draft: true
+  prerelease: true
+  force_update: true
