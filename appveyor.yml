@@ -48,7 +48,6 @@ for:
   cache:  
   - $HOME/.npm
   - $HOME/.cache/electron
-  - $HOME/Library/Caches/electron
   
   install:
   - node --version
@@ -72,7 +71,6 @@ for:
   
   cache:  
   - $HOME/.npm
-  - $HOME/.cache/electron
   - $HOME/Library/Caches/electron
       
   install:
