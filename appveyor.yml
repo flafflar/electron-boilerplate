@@ -14,11 +14,17 @@ cache:
 - '%LOCALAPPDATA%/electron/cache'
 - '%LOCALAPPDATA%/electron-builder/cache'
 
-install:
-- ps: Install-Product node $env:nodejs_version
-- cmd: node --version
-- cmd: npm --version
-- cmd: npm ci
+for:
+-
+  matrix:
+    only:
+      - image: Visual Studio 2019
+
+  install:
+  - ps: Install-Product node $env:nodejs_version
+  - cmd: node --version
+  - cmd: npm --version
+  - cmd: npm ci
 
 build: off
 
