@@ -77,7 +77,7 @@ const compiler = webpack([{
 	}
 }]);
 
-
+/*
 if (process.argv.includes('--watch')){
 	console.log('Starting webpack watching...\nPress Ctrl+C to stop\n');
 
@@ -116,3 +116,4 @@ if (process.argv.includes('--watch')){
 		};
 	})
 };
+*/
