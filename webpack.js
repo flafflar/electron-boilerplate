@@ -8,7 +8,9 @@ const compiler = webpack([{
 	target: 'electron-main',
 	node: {
 		__dirname: false,
-		__filename: false
+		__filename: false,
+		Buffer: false,
+		process: false
 	},
 	entry: './src/main/main.js',
 	output: {
@@ -32,7 +34,9 @@ const compiler = webpack([{
 	target: 'electron-preload',
 	node: {
 		__dirname: false,
-		__filename: false
+		__filename: false,
+		Buffer: false,
+		process: false
 	},
 	entry: './src/main/preload.js',
 	output: {
@@ -45,7 +49,9 @@ const compiler = webpack([{
 	target: 'electron-renderer',
 	node: {
 		__dirname: false,
-		__filename: false
+		__filename: false,
+		Buffer: false,
+		process: false
 	},
 	entry: './src/renderer/renderer.jsx',
 	output: {
