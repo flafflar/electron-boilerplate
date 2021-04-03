@@ -78,26 +78,9 @@ for:
     - path: dist/latest-mac.yml
       name: macOS update file
 
--
-  branches:
-    only:
-     - master
-
-  test_script:
-  - cmd: npm run build
-  - cmd: npm test
-
-  on_success:
-  - cmd: npm run publish
-
--
-  branches:
-    except:
-      - master
-
-  test_script:
-  - cmd: npm run build
-  - cmd: npm test
+test_script:
+- npm run build
+- npm test
 
 deploy:
   release: Draft
