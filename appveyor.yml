@@ -8,7 +8,7 @@ environment:
     secure: QFxUKBUe3jwvUdS2rPo4w8J+WBaui0d0brYgm1yfgPU/h6jMpPqlGAJP6cH94yrp
   nodejs_version: "12"
   
-stack: node 12
+stack: node $(nodejs_version)
 
 version: 0.0.0.{build}
 
