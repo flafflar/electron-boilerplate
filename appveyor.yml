@@ -14,6 +14,8 @@ cache:
 - '%LOCALAPPDATA%/electron/cache'
 - '%LOCALAPPDATA%/electron-builder/cache'
 
+build: off
+
 for:
 -
   matrix:
@@ -25,10 +27,7 @@ for:
   - cmd: node --version
   - cmd: npm --version
   - cmd: npm ci
-
-build: off
-
-for:
+ 
 -
   branches:
     only:
