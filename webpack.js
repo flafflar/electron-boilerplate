@@ -5,19 +5,19 @@ let mode = process.argv.includes('--dev') ? 'development' : 'production';
 
 const compiler = webpack({
 	mode: mode,
-	target: 'electron-main',
+	/*target: 'electron-main',
 	node: {
 		__dirname: false,
 		__filename: false,
 		Buffer: false,
 		process: false
-	},
+	},*/
 	entry: './src/main/main.js',
 	output: {
 		path: path.resolve(__dirname, 'app'),
 		filename: 'main.js'
 	},
-	devtool: 'source-map',
+	// devtool: 'source-map',
 	module: {
 		rules: [
 			{
