@@ -42,6 +42,11 @@ for:
   matrix:
     only:
       - image: Ubuntu
+  
+  install:
+  - node --version
+  - npm --version
+  - npm ci
       
   artifacts:
     - path: dist/*.snap
@@ -57,6 +62,11 @@ for:
   matrix:
     only:
       - image: macOS
+      
+  install:
+  - node --version
+  - npm --version
+  - npm ci
       
   artifacts:
     - path: dist/*.dmg
