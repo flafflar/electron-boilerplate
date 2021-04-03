@@ -40,7 +40,7 @@ if (process.argv.includes('--watch')){
 		ignored: /node_modules/
 	}, (err, stats) => {
 		if (err){
-			console.error(err);
+			console.error( err );
 		} else {
 			console.log(stats.toString({
 				stats: 'verbose',
