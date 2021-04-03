@@ -12,10 +12,6 @@ stack: node $(nodejs_version)
 
 version: 0.0.0.{build}
 
-cache:
-- '%LOCALAPPDATA%/electron/cache'
-- '%LOCALAPPDATA%/electron-builder/cache'
-
 build: off
 
 for:
@@ -23,6 +19,10 @@ for:
   matrix:
     only:
       - image: Visual Studio 2019
+      
+  cache:
+  - '%LOCALAPPDATA%/electron/cache'
+  - '%LOCALAPPDATA%/electron-builder/cache'
 
   install:
   - ps: Install-Product node $env:nodejs_version
@@ -44,6 +44,11 @@ for:
   matrix:
     only:
       - image: Ubuntu
+   
+  cache:  
+  - $HOME/.npm
+  - $HOME/.cache/electron
+  - $HOME/Library/Caches/electron
   
   install:
   - node --version
@@ -64,6 +69,11 @@ for:
   matrix:
     only:
       - image: macOS
+  
+  cache:  
+  - $HOME/.npm
+  - $HOME/.cache/electron
+  - $HOME/Library/Caches/electron
       
   install:
   - node --version
