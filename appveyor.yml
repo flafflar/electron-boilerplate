@@ -41,7 +41,7 @@ for:
 -
   matrix:
     only:
-      - Ubuntu
+      - image: Ubuntu
       
   artifacts:
     - path: dist/*.snap
@@ -56,7 +56,7 @@ for:
 -
   matrix:
     only:
-      - macOS
+      - image: macOS
       
   artifacts:
     - path: dist/*.dmg
