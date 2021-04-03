@@ -3,7 +3,7 @@ const path = require('path');
 
 let mode = process.argv.includes('--dev') ? 'development' : 'production';
 
-const compiler = webpack([{
+const compiler = webpack({
 	mode: mode,
 	target: 'electron-main',
 	node: {
@@ -29,55 +29,9 @@ const compiler = webpack([{
 			}
 		]
 	}
-}, {
-	mode: mode,
-	target: 'electron-preload',
-	node: {
-		__dirname: false,
-		__filename: false,
-		Buffer: false,
-		process: false
-	},
-	entry: './src/main/preload.js',
-	output: {
-		path: path.resolve(__dirname, 'app'),
-		filename: 'preload.js'
-	},
-	devtool: 'source-map'
-}, {
-	mode: mode,
-	target: 'electron-renderer',
-	node: {
-		__dirname: false,
-		__filename: false,
-		Buffer: false,
-		process: false
-	},
-	entry: './src/renderer/renderer.jsx',
-	output: {
-		path: path.resolve(__dirname, 'app'),
-		filename: 'renderer.js'
-	},
-	devtool: 'source-map',
-	module: {
-		rules: [
-			{
-				test: /\.jsx$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader',
-				options: {
-					presets: ['@babel/preset-react']
-				}
-			},
-			{
-				test: /\.css$/,
-				loaders: ['style-loader', 'css-loader']
-			}
-		]
-	}
-}]);
+});
 
-/*
+
 if (process.argv.includes('--watch')){
 	console.log('Starting webpack watching...\nPress Ctrl+C to stop\n');
 
@@ -106,7 +60,7 @@ if (process.argv.includes('--watch')){
 } else {
 	compiler.run((err, stats) => {
 		if (err){
-			console.error(Object.keys(err)) ;
+			console.error(err);
 		} else {
 			console.log(stats.toString({
 				stats: 'verbose',
@@ -116,4 +70,3 @@ if (process.argv.includes('--watch')){
 		};
 	})
 };
-*/
