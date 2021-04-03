@@ -106,7 +106,7 @@ if (process.argv.includes('--watch')){
 } else {
 	compiler.run((err, stats) => {
 		if (err){
-			console.error(err);
+			console.error(Object.keys(err));
 		} else {
 			console.log(stats.toString({
 				stats: 'verbose',
