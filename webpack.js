@@ -20,10 +20,12 @@ const compiler = webpack([{
 		rules: [
 			{
 				test: /\.html$/,
-				loader: 'file-loader',
-				options: {
-					name: '[name].[ext]'
-				}
+				use: [{
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]'
+					}
+				}]
 			}
 		]
 	}
@@ -58,14 +60,16 @@ const compiler = webpack([{
 			{
 				test: /\.jsx$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader',
-				options: {
-					presets: ['@babel/preset-react']
-				}
+				use: [{
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-react']
+					}
+				}]
 			},
 			{
 				test: /\.css$/,
-				loaders: ['style-loader', 'css-loader']
+				use: ['style-loader', 'css-loader']
 			}
 		]
 	}
