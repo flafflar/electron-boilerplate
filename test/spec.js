@@ -31,9 +31,11 @@ describe('Application launch', function(){
 	})
 
 	it('Should contain the app container element', function(){
-		return app.client.isExisting('#app').then(function(isExisting){
-			assert.ok(isExisting);
-		});
+		return app.client.$('#app').then(function(appElem){
+			appElem.isExisting().then(function(isExisting){
+				assert.ok(isExisting);
+			})
+		})
 	});
 
 })
